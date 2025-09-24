@@ -70,9 +70,9 @@
 			/* Typewriter effect styles */
 			.cursor {
 				display: inline-block;
-				background-color: #333;
-				margin-left: 3px;
-				width: 3px;
+				color: #333;
+				margin-left: 2px;
+				font-weight: normal;
 				animation: blink 1s infinite;
 			}
 			@keyframes blink {
@@ -144,12 +144,12 @@
 
 				// Typewriter effect for rotating text
 				const phrases = [
-					"An aspiring software engineer",
-					"A student at Rutgers University", 
-					"A dedicated runner",
-					"A traveler and explorer",
-					"A football fan",
-					"A visionary"
+					"An Aspiring Software Engineer",
+					"A Student At Rutgers University", 
+					"A Dedicated Runner",
+					"A Traveler And Explorer",
+					"A Football Fan",
+					"A Visionary"
 				];
 				
 				let currentPhraseIndex = 0;
@@ -160,7 +160,7 @@
 				const rotatingTextElement = document.getElementById('rotating-text');
 				
 				function typeWriter() {
-					const currentPhrase = phrases[currentPhraseIndex];
+					const currentPhrase = phrases[currentPhraseIndex].trim(); // Remove any trailing spaces
 					
 					if (isDeleting) {
 						// Remove characters
@@ -224,7 +224,7 @@
 									<div class="content">
 										<header>
 											<h1>Hi, I'm Vineeth Reddy</h1>
-											<h2><span id="rotating-text">An aspiring software engineer</span><span class="cursor">|</span></h2>
+											<h2><span id="rotating-text">An Aspiring Software Engineer</span><span class="cursor">|</span></h2>
 										</header>
 										<p>What draws me to technology is its ability to turn curiosity into creation, and being able to take an idea or passion and transform it into something tangible through code.</p>
 										<p>That mindset has shaped many of my projects. As someone who enjoys both poker and football, I've built a poker game where players face off against AI bots and an NFL match predictor that uses machine learning to forecast outcomes. These projects blend the analytical side of computer science with the things I love outside the classroom, showing me how technology can connect to all aspects of life.</p>
