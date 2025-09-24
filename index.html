@@ -281,25 +281,55 @@
 									<header class="major">
 										<h2>Contact</h2>
 									</header>
-									<div class="contact-content" style="text-align: center;">
-										<h3 style="color: #f56a6a; margin-bottom: 2em; font-size: 2.5em;">Say Hi!</h3>
-										<div style="display: flex; justify-content: center; gap: 3em; flex-wrap: wrap;">
-											<div style="display: flex; align-items: center;">
-												<span class="icon solid fa-envelope" style="color: #f56a6a; margin-right: 1em; font-size: 1.5em;"></span>
-												<a href="mailto:vineethr767@gmail.com" style="color: #333; text-decoration: none; font-size: 1.1em;">vineethr767@gmail.com</a>
+									<div class="contact-content" style="display: grid; grid-template-columns: 1fr 1fr; gap: 4em; align-items: start;">
+										<!-- Contact Information -->
+										<div class="contact-info" style="padding: 2em;">
+											<h3 style="color: #f56a6a; margin-bottom: 2em; font-size: 2.5em;">Say Hi!</h3>
+											
+											<div style="margin-bottom: 2em;">
+												<div style="display: flex; align-items: center; margin-bottom: 1em;">
+													<div style="width: 50px; height: 50px; background: #e6f3ff; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 1.5em;">
+														<span class="icon solid fa-map-marker-alt" style="color: #4A90E2; font-size: 1.2em;"></span>
+													</div>
+													<div>
+														<h4 style="margin: 0; color: #333; font-size: 1.2em;">Location:</h4>
+														<p style="margin: 0; color: #666; font-size: 1em;">Edison, New Jersey, USA</p>
+													</div>
+												</div>
+												
+												<div style="display: flex; align-items: center; margin-bottom: 1em;">
+													<div style="width: 50px; height: 50px; background: #e6f3ff; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 1.5em;">
+														<span class="icon solid fa-envelope" style="color: #4A90E2; font-size: 1.2em;"></span>
+													</div>
+													<div>
+														<h4 style="margin: 0; color: #333; font-size: 1.2em;">Email:</h4>
+														<a href="mailto:vineethr767@gmail.com" style="margin: 0; color: #666; text-decoration: none; font-size: 1em;">vineethr767@gmail.com</a>
+													</div>
+												</div>
+												
+												<div style="display: flex; align-items: center; margin-bottom: 1em;">
+													<div style="width: 50px; height: 50px; background: #e6f3ff; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 1.5em;">
+														<span class="icon solid fa-phone" style="color: #4A90E2; font-size: 1.2em;"></span>
+													</div>
+													<div>
+														<h4 style="margin: 0; color: #333; font-size: 1.2em;">Call:</h4>
+														<a href="tel:8484046616" style="margin: 0; color: #666; text-decoration: none; font-size: 1em;">(848) 404-6616</a>
+													</div>
+												</div>
 											</div>
-											<div style="display: flex; align-items: center;">
-												<span class="icon solid fa-phone" style="color: #f56a6a; margin-right: 1em; font-size: 1.5em;"></span>
-												<a href="tel:8484046616" style="color: #333; text-decoration: none; font-size: 1.1em;">(848) 404-6616</a>
-											</div>
-											<div style="display: flex; align-items: center;">
-												<span class="icon brands fa-linkedin" style="color: #f56a6a; margin-right: 1em; font-size: 1.5em;"></span>
-												<a href="https://www.linkedin.com/in/vineeth-reddy123/" target="_blank" style="color: #333; text-decoration: none; font-size: 1.1em;">LinkedIn</a>
-											</div>
-											<div style="display: flex; align-items: center;">
-												<span class="icon brands fa-github" style="color: #f56a6a; margin-right: 1em; font-size: 1.5em;"></span>
-												<a href="https://github.com/Vin916" target="_blank" style="color: #333; text-decoration: none; font-size: 1.1em;">GitHub</a>
-											</div>
+										</div>
+										
+										<!-- Contact Form -->
+										<div class="contact-form" style="padding: 2em;">
+											<form method="post" action="#" style="display: flex; flex-direction: column; gap: 1.5em;">
+												<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1em;">
+													<input type="text" name="name" id="name" placeholder="Your Name" style="padding: 1em; border: 2px solid #e0e0e0; border-radius: 8px; font-size: 1em; background: #f9f9f9;" required />
+													<input type="email" name="email" id="email" placeholder="Your Email" style="padding: 1em; border: 2px solid #e0e0e0; border-radius: 8px; font-size: 1em; background: #f9f9f9;" required />
+												</div>
+												<input type="text" name="subject" id="subject" placeholder="Subject" style="padding: 1em; border: 2px solid #e0e0e0; border-radius: 8px; font-size: 1em; background: #f9f9f9;" required />
+												<textarea name="message" id="message" placeholder="Message" rows="6" style="padding: 1em; border: 2px solid #e0e0e0; border-radius: 8px; font-size: 1em; resize: vertical; background: #f9f9f9;" required></textarea>
+												<button type="submit" style="background: #4A90E2; color: white; border: none; padding: 1.2em 2.5em; border-radius: 25px; font-size: 1.1em; font-weight: bold; cursor: pointer; transition: background 0.2s ease; align-self: flex-start;" onmouseover="this.style.background='#357ABD'" onmouseout="this.style.background='#4A90E2'">Send Message</button>
+											</form>
 										</div>
 									</div>
 								</section>
@@ -307,97 +337,6 @@
 						</div>
 					</div>
 
-				<!-- Sidebar -->
-					<div id="sidebar">
-						<div class="inner">
-
-							<!-- Search -->
-								<section id="search" class="alt">
-									<form method="post" action="#">
-										<input type="text" name="query" id="query" placeholder="Search" />
-									</form>
-								</section>
-
-							<!-- Menu -->
-								<nav id="menu">
-									<header class="major">
-										<h2>Menu</h2>
-									</header>
-									<ul>
-										<li><a href="index.html">Homepage</a></li>
-										<li><a href="generic.html">Generic</a></li>
-										<li><a href="elements.html">Elements</a></li>
-										<li>
-											<span class="opener">Submenu</span>
-											<ul>
-												<li><a href="#">Lorem Dolor</a></li>
-												<li><a href="#">Ipsum Adipiscing</a></li>
-												<li><a href="#">Tempus Magna</a></li>
-												<li><a href="#">Feugiat Veroeros</a></li>
-											</ul>
-										</li>
-										<li><a href="#">Etiam Dolore</a></li>
-										<li><a href="#">Adipiscing</a></li>
-										<li>
-											<span class="opener">Another Submenu</span>
-											<ul>
-												<li><a href="#">Lorem Dolor</a></li>
-												<li><a href="#">Ipsum Adipiscing</a></li>
-												<li><a href="#">Tempus Magna</a></li>
-												<li><a href="#">Feugiat Veroeros</a></li>
-											</ul>
-										</li>
-										<li><a href="#">Maximus Erat</a></li>
-										<li><a href="#">Sapien Mauris</a></li>
-										<li><a href="#">Amet Lacinia</a></li>
-									</ul>
-								</nav>
-
-							<!-- Section -->
-								<section>
-									<header class="major">
-										<h2>Ante interdum</h2>
-									</header>
-									<div class="mini-posts">
-										<article>
-											<a href="#" class="image"><img src="images/pic07.jpg" alt="" /></a>
-											<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore aliquam.</p>
-										</article>
-										<article>
-											<a href="#" class="image"><img src="images/pic08.jpg" alt="" /></a>
-											<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore aliquam.</p>
-										</article>
-										<article>
-											<a href="#" class="image"><img src="images/pic09.jpg" alt="" /></a>
-											<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore aliquam.</p>
-										</article>
-									</div>
-									<ul class="actions">
-										<li><a href="#" class="button">More</a></li>
-									</ul>
-								</section>
-
-							<!-- Section -->
-								<section>
-									<header class="major">
-										<h2>Get in touch</h2>
-									</header>
-									<p>Sed varius enim lorem ullamcorper dolore aliquam aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin sed aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
-									<ul class="contact">
-										<li class="icon solid fa-envelope"><a href="#">information@untitled.tld</a></li>
-										<li class="icon solid fa-phone">(000) 000-0000</li>
-										<li class="icon solid fa-home">1234 Somewhere Road #8254<br />
-										Nashville, TN 00000-0000</li>
-									</ul>
-								</section>
-
-							<!-- Footer -->
-								<footer id="footer">
-									<p class="copyright">&copy; Untitled. All rights reserved. Demo Images: <a href="https://unsplash.com">Unsplash</a>. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
-								</footer>
-
-						</div>
-					</div>
 
 			</div>
 
