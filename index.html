@@ -12,18 +12,20 @@
 		<link rel="icon" type="image/svg+xml" href="favicon.svg" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<style>
-			/* Course icon hover effects */
-			.features article .icon {
-				transition: color 0.3s ease, transform 0.2s ease;
+			/* Course icon hover effects - matching the social media icons */
+			.features article {
 				cursor: pointer;
+				transition: all 0.2s ease;
+			}
+			.features article .icon {
+				transition: color 0.2s ease-in-out, transform 0.2s ease;
 			}
 			.features article:hover .icon {
-				color: #f56565 !important;
+				color: #f56a6a !important;
 				transform: scale(1.1);
 			}
-			/* Alternative selector in case the above doesn't work */
-			.features article:hover span.icon {
-				color: #f56565 !important;
+			.features article:hover h3 {
+				color: #f56a6a;
 			}
 		</style>
 	</head>
@@ -68,42 +70,42 @@
 										<h2>Courses</h2>
 									</header>
 									<div class="features">
-										<article>
+										<article onclick="window.open('https://www.cs.rutgers.edu/academics/undergraduate/course-synopses/course-details/01-198-112-data-structures', '_blank')">
 											<span class="icon solid fa-sitemap"></span>
 											<div class="content">
 												<h3>Data Structures</h3>
 												<p>Gained expertise in analyzing algorithm efficiency and implementing complex data structures including trees, graphs, and hash tables. Developed skills in optimizing data structure performance for real-world applications and debugging implementation issues.</p>
 											</div>
 										</article>
-										<article>
+										<article onclick="window.open('https://math.rutgers.edu/academics/undergraduate/course-descriptions/948-01-640-250-introductory-linear-algebra', '_blank')">
 											<span class="icon solid fa-calculator"></span>
 											<div class="content">
 												<h3>Linear Algebra</h3>
 												<p>Mastered fundamental concepts including matrix operations, eigenvalues/eigenvectors, and vector spaces with applications to coordinate transformations. Developed proficiency in solving linear systems using Gaussian elimination and understanding geometric interpretations of linear transformations.</p>
 											</div>
 										</article>
-										<article>
+										<article onclick="window.open('https://www.cs.rutgers.edu/academics/undergraduate/course-synopses/course-details/01-198-206-introduction-to-discrete-structures-ii', '_blank')">
 											<span class="icon solid fa-project-diagram"></span>
 											<div class="content">
 												<h3>Discrete Structures 1/2</h3>
 												<p>Built strong foundation in combinatorics, discrete probability, and graph theory essential for algorithm design and analysis. Developed expertise in counting techniques, probability distributions, and graph algorithms including path analysis and connectivity problems.</p>
 											</div>
 										</article>
-										<article>
+										<article onclick="window.open('https://www.cs.rutgers.edu/academics/undergraduate/course-synopses/course-details/01-198-211-computer-architecture', '_blank')">
 											<span class="icon solid fa-microchip"></span>
 											<div class="content">
 												<h3>Computer Architecture</h3>
 												<p>Gained comprehensive understanding of computer system design including processor architecture, memory hierarchy, and I/O systems. Developed proficiency in C programming, assembly language, digital logic design, and the critical software/hardware interface that drives modern computing systems.</p>
 											</div>
 										</article>
-										<article>
+										<article onclick="window.open('https://www.cs.rutgers.edu/academics/undergraduate/course-synopses/course-details/01-198-344-design-and-analysis-of-computer-algorithms', '_blank')">
 											<span class="icon solid fa-cogs"></span>
 											<div class="content">
 												<h3>Design and Analysis of Computer Algorithms</h3>
 												<p>Mastered complexity analysis and algorithm design principles through studying sorting, searching, and graph algorithms including shortest path and minimum spanning tree. Developed understanding of NP-completeness, approximation algorithms, and computational complexity theory for solving real-world optimization problems.</p>
 											</div>
 										</article>
-										<article>
+										<article onclick="window.open('https://www.cs.rutgers.edu/academics/undergraduate/course-synopses/course-details/01-198-213-software-methodology', '_blank')">
 											<span class="icon solid fa-tools"></span>
 											<div class="content">
 												<h3>Software Methodology</h3>
