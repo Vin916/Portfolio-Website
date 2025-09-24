@@ -42,20 +42,19 @@
   <!-- L3 to Memory -->
   <line x1="210" y1="122" x2="250" y2="95" stroke="white" stroke-width="2" marker-end="url(#arrowhead)"/>
   
-  <!-- Cache Statistics -->
+  <!-- Cache Configuration -->
   <rect x="30" y="160" width="340" height="120" rx="10" fill="rgba(255,255,255,0.1)" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
-  <text x="200" y="180" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white" text-anchor="middle">Performance Metrics</text>
+  <text x="200" y="180" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white" text-anchor="middle">Configurable Parameters</text>
   
-  <!-- Stats -->
-  <text x="50" y="205" font-family="Arial, sans-serif" font-size="11" fill="white">Hit Rate: 85.4%</text>
-  <text x="200" y="205" font-family="Arial, sans-serif" font-size="11" fill="white">Miss Rate: 14.6%</text>
+  <!-- Configuration Options -->
+  <text x="50" y="205" font-family="Arial, sans-serif" font-size="11" fill="white">• Cache Size (KB/MB)</text>
+  <text x="200" y="205" font-family="Arial, sans-serif" font-size="11" fill="white">• Block Size (Bytes)</text>
   
-  <text x="50" y="225" font-family="Arial, sans-serif" font-size="11" fill="white">Cache Size: 64KB</text>
-  <text x="200" y="225" font-family="Arial, sans-serif" font-size="11" fill="white">Block Size: 64B</text>
+  <text x="50" y="225" font-family="Arial, sans-serif" font-size="11" fill="white">• Associativity (Direct/Set)</text>
+  <text x="200" y="225" font-family="Arial, sans-serif" font-size="11" fill="white">• Replacement Policy</text>
   
-  <text x="50" y="245" font-family="Arial, sans-serif" font-size="11" fill="white">Associativity: 4-way</text>
-  <text x="200" y="245" font-family="Arial, sans-serif" font-size="11" fill="white">Policy: LRU</text>
+  <text x="50" y="245" font-family="Arial, sans-serif" font-size="11" fill="white">• LRU / FIFO / Random</text>
+  <text x="200" y="245" font-family="Arial, sans-serif" font-size="11" fill="white">• Performance Analysis</text>
   
-  <text x="50" y="265" font-family="Arial, sans-serif" font-size="11" fill="white">Access Time: 2.3ns</text>
-  <text x="200" y="265" font-family="Arial, sans-serif" font-size="11" fill="white">Total Accesses: 10,247</text>
+  <text x="125" y="265" font-family="Arial, sans-serif" font-size="11" fill="white">Simulates Various Cache Architectures</text>
 </svg>
