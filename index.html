@@ -89,6 +89,9 @@
 				border: 2px solid #f56a6a !important;
 				color: #f56a6a !important;
 				transition: all 0.2s ease !important;
+				padding: 0.8em 1.5em !important;
+				font-size: 1.1em !important;
+				font-weight: 600 !important;
 			}
 			.nav-button:hover {
 				background-color: #f56a6a !important;
@@ -140,9 +143,13 @@
 				function scrollToSection(sectionId) {
 					const element = document.getElementById(sectionId);
 					if (element) {
-						element.scrollIntoView({
-							behavior: 'smooth',
-							block: 'start'
+						const headerHeight = 80; // Account for header height
+						const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+						const offsetPosition = elementPosition - headerHeight;
+						
+						window.scrollTo({
+							top: offsetPosition,
+							behavior: 'smooth'
 						});
 					}
 				}
@@ -242,10 +249,10 @@
 								<header id="header">
 									<a href="index.html" class="logo"></a>
 									<ul class="actions">
-										<li><a href="#courses" class="button small nav-button" onclick="scrollToSection('courses')">Courses</a></li>
-										<li><a href="#projects" class="button small nav-button" onclick="scrollToSection('projects')">Projects</a></li>
-										<li><a href="#resume" class="button small nav-button" onclick="scrollToSection('resume')">Resume</a></li>
-										<li><a href="#contact" class="button small nav-button" onclick="scrollToSection('contact')">Contact</a></li>
+										<li><a href="#courses" class="button nav-button" onclick="event.preventDefault(); scrollToSection('courses')">Courses</a></li>
+										<li><a href="#projects" class="button nav-button" onclick="event.preventDefault(); scrollToSection('projects')">Projects</a></li>
+										<li><a href="#resume" class="button nav-button" onclick="event.preventDefault(); scrollToSection('resume')">Resume</a></li>
+										<li><a href="#contact" class="button nav-button" onclick="event.preventDefault(); scrollToSection('contact')">Contact</a></li>
 									</ul>
 								</header>
 
