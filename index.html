@@ -42,6 +42,13 @@
 			.resume-button:hover h3 {
 				color: white !important;
 			}
+			/* Ensure sidebar starts closed by default */
+			#sidebar {
+				transform: translateX(100%);
+			}
+			body.is-sidebar-visible #sidebar {
+				transform: translateX(0);
+			}
 		</style>
 		<script>
 			function showSection(sectionName) {
