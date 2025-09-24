@@ -238,6 +238,34 @@
 				// Start the typewriter effect
 				typeWriter();
 			});
+
+			// Contact form dummy submission
+			function showMessageSent(event) {
+				event.preventDefault(); // Prevent actual form submission
+				
+				const button = document.getElementById('sendButton');
+				const originalText = button.innerHTML;
+				
+				// Change button to show success message with checkmark
+				button.innerHTML = '✓ Message Sent!';
+				button.style.background = '#28a745'; // Green success color
+				button.style.cursor = 'default';
+				
+				// Reset form fields
+				document.getElementById('name').value = '';
+				document.getElementById('email').value = '';
+				document.getElementById('subject').value = '';
+				document.getElementById('message').value = '';
+				
+				// Reset button after 3 seconds
+				setTimeout(function() {
+					button.innerHTML = originalText;
+					button.style.background = '#f56a6a';
+					button.style.cursor = 'pointer';
+				}, 3000);
+				
+				return false; // Prevent form submission
+			}
 		</script>
 	</head>
 	<body class="is-preload">
@@ -582,14 +610,14 @@
 										
 										<!-- Contact Form -->
 										<div class="contact-form" style="padding: 1.5em; width: 100%;">
-											<form method="post" action="#" style="display: flex; flex-direction: column; gap: 1.5em; width: 100%;">
+											<form method="post" action="#" onsubmit="return showMessageSent(event);" style="display: flex; flex-direction: column; gap: 1.5em; width: 100%;">
 												<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5em; width: 100%;">
 													<input type="text" name="name" id="name" placeholder="Your Name" style="padding: 1.5em; border: 2px solid #e0e0e0; border-radius: 12px; font-size: 1.2em; background: #f9f9f9; width: 100%; box-sizing: border-box;" required />
 													<input type="email" name="email" id="email" placeholder="Your Email" style="padding: 1.5em; border: 2px solid #e0e0e0; border-radius: 12px; font-size: 1.2em; background: #f9f9f9; width: 100%; box-sizing: border-box;" required />
 												</div>
 												<input type="text" name="subject" id="subject" placeholder="Subject" style="padding: 1.5em; border: 2px solid #e0e0e0; border-radius: 12px; font-size: 1.2em; background: #f9f9f9; width: 100%; box-sizing: border-box;" required />
 												<textarea name="message" id="message" placeholder="Message" rows="6" style="padding: 1.5em; border: 2px solid #e0e0e0; border-radius: 12px; font-size: 1.2em; resize: vertical; background: #f9f9f9; width: 100%; box-sizing: border-box;" required></textarea>
-												<button type="submit" style="background: #f56a6a; color: #ffffff !important; border: none; padding: 1.5em 3em; border-radius: 30px; font-size: 1.2em; font-weight: bold; cursor: pointer; transition: background 0.2s ease; align-self: flex-start; text-transform: uppercase; letter-spacing: 1px; display: flex; align-items: center; justify-content: center; text-align: center; min-width: 250px;" onmouseover="this.style.background='#e55555'" onmouseout="this.style.background='#f56a6a'">Send Message</button>
+												<button type="submit" id="sendButton" style="background: #f56a6a; color: #ffffff !important; border: none; padding: 1.5em 3em; border-radius: 30px; font-size: 1.2em; font-weight: bold; cursor: pointer; transition: background 0.2s ease; align-self: flex-start; text-transform: uppercase; letter-spacing: 1px; display: flex; align-items: center; justify-content: center; text-align: center; min-width: 250px;" onmouseover="this.style.background='#e55555'" onmouseout="this.style.background='#f56a6a'">Send Message</button>
 											</form>
 										</div>
 									</div>
