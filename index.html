@@ -83,6 +83,18 @@
 				display: inline-block;
 				min-width: 1ch;
 			}
+			/* Navigation button styles */
+			.nav-button {
+				background-color: #f56a6a !important;
+				border-color: #f56a6a !important;
+				color: white !important;
+				transition: all 0.2s ease !important;
+			}
+			.nav-button:hover {
+				background-color: #e55a5a !important;
+				border-color: #e55a5a !important;
+				transform: scale(1.05) !important;
+			}
 		</style>
 		<script>
 			function showSection(sectionName) {
@@ -110,13 +122,24 @@
 				activeButton.querySelector('h3').style.color = 'white';
 			}
 
-			// Scroll to top functionality
-			function scrollToTop() {
-				window.scrollTo({
-					top: 0,
-					behavior: 'smooth'
-				});
-			}
+				// Scroll to top functionality
+				function scrollToTop() {
+					window.scrollTo({
+						top: 0,
+						behavior: 'smooth'
+					});
+				}
+
+				// Smooth scroll to section functionality
+				function scrollToSection(sectionId) {
+					const element = document.getElementById(sectionId);
+					if (element) {
+						element.scrollIntoView({
+							behavior: 'smooth',
+							block: 'start'
+						});
+					}
+				}
 
 			// Show/hide scroll to top button based on scroll position
 			window.addEventListener('scroll', function() {
@@ -212,10 +235,11 @@
 							<!-- Header -->
 								<header id="header">
 									<a href="index.html" class="logo"></a>
-									<ul class="icons">
-										<li><a href="https://github.com/Vin916" target="_blank" class="icon brands fa-github" style="font-size: 1.4em;"><span class="label">GitHub</span></a></li>
-										<li><a href="https://www.linkedin.com/in/vineeth-reddy123/" target="_blank" class="icon brands fa-linkedin" style="font-size: 1.4em;"><span class="label">LinkedIn</span></a></li>
-										<li><a href="mailto:vineethr767@gmail.com" class="icon solid fa-envelope" style="font-size: 1.4em;"><span class="label">Email</span></a></li>
+									<ul class="actions">
+										<li><a href="#courses" class="button small nav-button" onclick="scrollToSection('courses')">Courses</a></li>
+										<li><a href="#projects" class="button small nav-button" onclick="scrollToSection('projects')">Projects</a></li>
+										<li><a href="#resume" class="button small nav-button" onclick="scrollToSection('resume')">Resume</a></li>
+										<li><a href="#contact" class="button small nav-button" onclick="scrollToSection('contact')">Contact</a></li>
 									</ul>
 								</header>
 
@@ -236,7 +260,7 @@
 								</section>
 
 							<!-- Section -->
-								<section>
+								<section id="courses">
 									<header class="major">
 										<h2 style="font-size: 2em;">Courses</h2>
 									</header>
@@ -287,7 +311,7 @@
 								</section>
 
 							<!-- Section -->
-								<section>
+								<section id="projects">
 									<header class="major">
 										<h2 style="font-size: 2em;">Projects</h2>
 									</header>
@@ -311,7 +335,7 @@
 								</section>
 
 							<!-- Resume Section -->
-								<section>
+								<section id="resume">
 									<header class="major">
 										<h2 style="font-size: 2em;">Resume</h2>
 									</header>
@@ -411,6 +435,7 @@
 												</div>
 												<ul style="margin-left: 1.5em; color: #555; margin-bottom: 1em;">
 													<li><strong>Awards:</strong> Dean's List (Fall 2023, Spring 2024, Fall 2024, Spring 2025)</li>
+													<li><strong>Clubs:</strong> RU Raga</li>
 												</ul>
 												<p style="color: #555;"><strong>Relevant Coursework:</strong> Data Structures, Introduction to Discrete Structures I & II, Design and Analysis of Computer Algorithms, Computer Architecture, Software Methodology, Econometrics, Linear Algebra, Intermediate Macroeconomic Analysis, Intermediate Microeconomic Analysis</p>
 											</div>
@@ -497,7 +522,7 @@
 								</section>
 
 							<!-- Contact Section -->
-								<section>
+								<section id="contact">
 									<header class="major">
 										<h2 style="font-size: 2em;">Contact</h2>
 									</header>
