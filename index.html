@@ -43,6 +43,32 @@
 				color: white !important;
 			}
 		</style>
+		<script>
+			function showSection(sectionName) {
+				// Hide all sections
+				const sections = document.querySelectorAll('.resume-section');
+				sections.forEach(section => {
+					section.style.display = 'none';
+				});
+				
+				// Reset all buttons to inactive state
+				const buttons = document.querySelectorAll('.resume-button');
+				buttons.forEach(button => {
+					button.style.background = 'transparent';
+					button.style.borderColor = '#000';
+					button.querySelector('h3').style.color = '#000';
+				});
+				
+				// Show selected section
+				document.getElementById(sectionName + '-content').style.display = 'block';
+				
+				// Highlight selected button
+				const activeButton = document.getElementById(sectionName + '-btn');
+				activeButton.style.background = '#f56a6a';
+				activeButton.style.borderColor = 'white';
+				activeButton.querySelector('h3').style.color = 'white';
+			}
+		</script>
 	</head>
 	<body class="is-preload">
 
@@ -160,17 +186,92 @@
 										<h2>Resume</h2>
 									</header>
 									<div class="resume-buttons" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5em; margin-bottom: 2em;">
-										<div class="resume-button" style="background: transparent; border: 2px solid #000; border-radius: 10px; padding: 2em; text-align: center; cursor: pointer; transition: all 0.2s ease-in-out;" onclick="alert('Education section coming soon!')">
+										<div class="resume-button" id="experience-btn" style="background: #f56a6a; border: 2px solid white; border-radius: 10px; padding: 2em; text-align: center; cursor: pointer; transition: all 0.2s ease-in-out;" onclick="showSection('experience')">
+											<h3 style="color: white; margin: 0; font-size: 1.8em; font-weight: bold;">Experience</h3>
+										</div>
+										<div class="resume-button" id="education-btn" style="background: transparent; border: 2px solid #000; border-radius: 10px; padding: 2em; text-align: center; cursor: pointer; transition: all 0.2s ease-in-out;" onclick="showSection('education')">
 											<h3 style="color: #000; margin: 0; font-size: 1.8em; font-weight: bold;">Education</h3>
 										</div>
-										<div class="resume-button" style="background: transparent; border: 2px solid #000; border-radius: 10px; padding: 2em; text-align: center; cursor: pointer; transition: all 0.2s ease-in-out;" onclick="alert('Experience section coming soon!')">
-											<h3 style="color: #000; margin: 0; font-size: 1.8em; font-weight: bold;">Experience</h3>
-										</div>
-										<div class="resume-button" style="background: transparent; border: 2px solid #000; border-radius: 10px; padding: 2em; text-align: center; cursor: pointer; transition: all 0.2s ease-in-out;" onclick="alert('Hackathons section coming soon!')">
+										<div class="resume-button" id="hackathons-btn" style="background: transparent; border: 2px solid #000; border-radius: 10px; padding: 2em; text-align: center; cursor: pointer; transition: all 0.2s ease-in-out;" onclick="showSection('hackathons')">
 											<h3 style="color: #000; margin: 0; font-size: 1.8em; font-weight: bold;">Hackathons</h3>
 										</div>
-										<div class="resume-button" style="background: transparent; border: 2px solid #000; border-radius: 10px; padding: 2em; text-align: center; cursor: pointer; transition: all 0.2s ease-in-out;" onclick="alert('Professional Skills section coming soon!')">
+										<div class="resume-button" id="skills-btn" style="background: transparent; border: 2px solid #000; border-radius: 10px; padding: 2em; text-align: center; cursor: pointer; transition: all 0.2s ease-in-out;" onclick="showSection('skills')">
 											<h3 style="color: #000; margin: 0; font-size: 1.8em; font-weight: bold;">Professional Skills</h3>
+										</div>
+									</div>
+									
+									<!-- Resume Content Sections -->
+									<div class="resume-content">
+										<!-- Experience Section (Default Active) -->
+										<div id="experience-content" class="resume-section active" style="display: block; padding: 2em; border: 2px solid #f56a6a; border-radius: 10px; background: rgba(245, 106, 106, 0.05);">
+											<h3 style="color: #f56a6a; margin-bottom: 1em;">Work Experience</h3>
+											<div style="margin-bottom: 2em;">
+												<h4 style="margin-bottom: 0.5em; color: #333;">Software Engineer Intern</h4>
+												<p style="margin-bottom: 0.5em; color: #666; font-style: italic;">Company Name • Summer 2024</p>
+												<ul style="margin-left: 1.5em; color: #555;">
+													<li>Developed and maintained web applications using modern frameworks</li>
+													<li>Collaborated with cross-functional teams on product development</li>
+													<li>Implemented efficient algorithms and data structures</li>
+												</ul>
+											</div>
+											<div>
+												<h4 style="margin-bottom: 0.5em; color: #333;">Research Assistant</h4>
+												<p style="margin-bottom: 0.5em; color: #666; font-style: italic;">Rutgers University • 2023-Present</p>
+												<ul style="margin-left: 1.5em; color: #555;">
+													<li>Conducted research in machine learning and data analysis</li>
+													<li>Published findings in academic conferences</li>
+													<li>Mentored undergraduate students in research methodologies</li>
+												</ul>
+											</div>
+										</div>
+										
+										<!-- Education Section -->
+										<div id="education-content" class="resume-section" style="display: none; padding: 2em; border: 2px solid #f56a6a; border-radius: 10px; background: rgba(245, 106, 106, 0.05);">
+											<h3 style="color: #f56a6a; margin-bottom: 1em;">Education</h3>
+											<div>
+												<h4 style="margin-bottom: 0.5em; color: #333;">Bachelor of Science</h4>
+												<p style="margin-bottom: 0.5em; color: #666; font-style: italic;">Rutgers University - New Brunswick • Expected 2025</p>
+												<p style="margin-bottom: 1em; color: #555;"><strong>Triple Major:</strong> Computer Science, Data Science, Economics</p>
+												<p style="color: #555;"><strong>Relevant Coursework:</strong> Data Structures, Linear Algebra, Discrete Structures, Computer Architecture, Design and Analysis of Computer Algorithms, Software Methodology</p>
+											</div>
+										</div>
+										
+										<!-- Hackathons Section -->
+										<div id="hackathons-content" class="resume-section" style="display: none; padding: 2em; border: 2px solid #f56a6a; border-radius: 10px; background: rgba(245, 106, 106, 0.05);">
+											<h3 style="color: #f56a6a; margin-bottom: 1em;">Hackathons & Competitions</h3>
+											<div style="margin-bottom: 2em;">
+												<h4 style="margin-bottom: 0.5em; color: #333;">HackRU Fall 2024</h4>
+												<p style="margin-bottom: 0.5em; color: #666; font-style: italic;">1st Place Winner</p>
+												<p style="color: #555;">Developed an AI-powered solution for sustainable energy management</p>
+											</div>
+											<div>
+												<h4 style="margin-bottom: 0.5em; color: #333;">Google Code Jam</h4>
+												<p style="margin-bottom: 0.5em; color: #666; font-style: italic;">Top 500 Globally</p>
+												<p style="color: #555;">Competed in algorithmic programming challenges</p>
+											</div>
+										</div>
+										
+										<!-- Professional Skills Section -->
+										<div id="skills-content" class="resume-section" style="display: none; padding: 2em; border: 2px solid #f56a6a; border-radius: 10px; background: rgba(245, 106, 106, 0.05);">
+											<h3 style="color: #f56a6a; margin-bottom: 1em;">Professional Skills</h3>
+											<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2em;">
+												<div>
+													<h4 style="margin-bottom: 1em; color: #333;">Programming Languages</h4>
+													<ul style="margin-left: 1.5em; color: #555;">
+														<li>Java, Python, C/C++</li>
+														<li>JavaScript, TypeScript</li>
+														<li>SQL, R</li>
+													</ul>
+												</div>
+												<div>
+													<h4 style="margin-bottom: 1em; color: #333;">Technologies & Frameworks</h4>
+													<ul style="margin-left: 1.5em; color: #555;">
+														<li>React, Node.js, Express</li>
+														<li>Flask, Django</li>
+														<li>MongoDB, PostgreSQL</li>
+													</ul>
+												</div>
+											</div>
 										</div>
 									</div>
 								</section>
