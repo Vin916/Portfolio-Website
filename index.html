@@ -67,6 +67,22 @@
 			.resume-button:hover h3 {
 				color: white !important;
 			}
+			/* Typewriter effect styles */
+			.cursor {
+				display: inline-block;
+				background-color: #333;
+				margin-left: 3px;
+				width: 3px;
+				animation: blink 1s infinite;
+			}
+			@keyframes blink {
+				0%, 50% { opacity: 1; }
+				51%, 100% { opacity: 0; }
+			}
+			#rotating-text {
+				display: inline-block;
+				min-width: 1ch;
+			}
 		</style>
 		<script>
 			function showSection(sectionName) {
@@ -125,6 +141,62 @@
 					this.style.transform = 'scale(1)';
 					this.style.boxShadow = '0 6px 20px rgba(245, 106, 106, 0.4)';
 				});
+
+				// Typewriter effect for rotating text
+				const phrases = [
+					"n aspiring software engineer",
+					" student at Rutgers University", 
+					" dedicated runner",
+					" traveler and explorer",
+					" football fan",
+					" visionary"
+				];
+				
+				let currentPhraseIndex = 0;
+				let currentText = '';
+				let isDeleting = false;
+				let charIndex = 0;
+				
+				const rotatingTextElement = document.getElementById('rotating-text');
+				
+				function typeWriter() {
+					const currentPhrase = phrases[currentPhraseIndex];
+					
+					if (isDeleting) {
+						// Remove characters
+						currentText = currentPhrase.substring(0, charIndex - 1);
+						charIndex--;
+					} else {
+						// Add characters
+						currentText = currentPhrase.substring(0, charIndex + 1);
+						charIndex++;
+					}
+					
+					rotatingTextElement.textContent = currentText;
+					
+					let typeSpeed = 100; // Normal typing speed
+					
+					if (isDeleting) {
+						typeSpeed = 50; // Faster when deleting
+					}
+					
+					// Check if word is complete
+					if (!isDeleting && charIndex === currentPhrase.length) {
+						// Pause at end of word
+						typeSpeed = 2000;
+						isDeleting = true;
+					} else if (isDeleting && charIndex === 0) {
+						// Move to next phrase
+						isDeleting = false;
+						currentPhraseIndex = (currentPhraseIndex + 1) % phrases.length;
+						typeSpeed = 500; // Pause before starting new word
+					}
+					
+					setTimeout(typeWriter, typeSpeed);
+				}
+				
+				// Start the typewriter effect
+				typeWriter();
 			});
 		</script>
 	</head>
@@ -152,7 +224,7 @@
 									<div class="content">
 										<header>
 											<h1>Hi, I'm Vineeth Reddy</h1>
-											<h2>Student at Rutgers University</h2>
+											<h2>A<span id="rotating-text">n aspiring software engineer</span><span class="cursor">|</span></h2>
 										</header>
 										<p>What draws me to technology is its ability to turn curiosity into creation, and being able to take an idea or passion and transform it into something tangible through code.</p>
 										<p>That mindset has shaped many of my projects. As someone who enjoys both poker and football, I've built a poker game where players face off against AI bots and an NFL match predictor that uses machine learning to forecast outcomes. These projects blend the analytical side of computer science with the things I love outside the classroom, showing me how technology can connect to all aspects of life.</p>
