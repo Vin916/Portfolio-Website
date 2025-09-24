@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" style="background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);">
+  <!-- Title -->
+  <text x="200" y="25" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="white" text-anchor="middle">Football Match Predictor</text>
+  
+  <!-- Football Icon -->
+  <ellipse cx="100" cy="80" rx="35" ry="20" fill="#8B4513" stroke="#654321" stroke-width="2"/>
+  <line x1="75" y1="80" x2="125" y2="80" stroke="white" stroke-width="2"/>
+  <line x1="85" y1="70" x2="85" y2="90" stroke="white" stroke-width="1"/>
+  <line x1="95" y1="72" x2="95" y2="88" stroke="white" stroke-width="1"/>
+  <line x1="105" y1="72" x2="105" y2="88" stroke="white" stroke-width="1"/>
+  <line x1="115" y1="70" x2="115" y2="90" stroke="white" stroke-width="1"/>
+  
+  <!-- ML Models -->
+  <rect x="200" y="50" width="120" height="25" rx="3" fill="#4CAF50" stroke="#2E7D32" stroke-width="2"/>
+  <text x="260" y="67" font-family="Arial, sans-serif" font-size="12" fill="white" text-anchor="middle">XGBoost</text>
+  
+  <rect x="200" y="85" width="120" height="25" rx="3" fill="#FF9800" stroke="#F57C00" stroke-width="2"/>
+  <text x="260" y="102" font-family="Arial, sans-serif" font-size="12" fill="white" text-anchor="middle">Random Forest</text>
+  
+  <rect x="200" y="120" width="120" height="25" rx="3" fill="#9C27B0" stroke="#7B1FA2" stroke-width="2"/>
+  <text x="260" y="137" font-family="Arial, sans-serif" font-size="12" fill="white" text-anchor="middle">Decision Trees</text>
+  
+  <!-- Arrow from Football to Models -->
+  <defs>
+    <marker id="arrowhead2" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="white" />
+    </marker>
+  </defs>
+  <line x1="140" y1="80" x2="190" y2="90" stroke="white" stroke-width="2" marker-end="url(#arrowhead2)"/>
+  
+  <!-- API Section -->
+  <rect x="50" y="170" width="300" height="100" rx="10" fill="rgba(255,255,255,0.1)" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+  <text x="200" y="190" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white" text-anchor="middle">Flask REST API</text>
+  
+  <!-- API Features -->
+  <text x="70" y="215" font-family="Arial, sans-serif" font-size="11" fill="white">🏆 Win Probabilities</text>
+  <text x="220" y="215" font-family="Arial, sans-serif" font-size="11" fill="white">📊 Score Forecasts</text>
+  
+  <text x="70" y="235" font-family="Arial, sans-serif" font-size="11" fill="white">⚡ Real-time Predictions</text>
+  <text x="220" y="235" font-family="Arial, sans-serif" font-size="11" fill="white">🎯 High Accuracy</text>
+  
+  <text x="70" y="255" font-family="Arial, sans-serif" font-size="11" fill="white">🔧 Feature Engineering</text>
+  <text x="220" y="255" font-family="Arial, sans-serif" font-size="11" fill="white">⚙️ Hyperparameter Tuning</text>
+  
+  <!-- Data Flow Arrow -->
+  <line x1="260" y1="155" x2="200" y2="170" stroke="white" stroke-width="2" marker-end="url(#arrowhead2)"/>
+</svg>
