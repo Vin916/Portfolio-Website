@@ -112,25 +112,21 @@
 				margin-left: auto !important;
 				justify-content: flex-end !important;
 			}
-			/* Force Contact header alignment to match other headers exactly */
-			#contact {
-				position: relative;
-			}
-			#contact header.major {
-				position: absolute;
-				left: 0 !important;
-				margin-left: 0 !important;
-				padding-left: 0 !important;
-				text-align: left !important;
-				width: auto !important;
-			}
-			#contact header.major h2 {
-				margin-left: 0 !important;
-				padding-left: 0 !important;
-				text-align: left !important;
-			}
+			/* Override Contact content container to not affect header alignment */
 			#contact .contact-content {
-				margin-top: 4em;
+				max-width: none !important;
+				margin: 0 !important;
+				padding: 0 !important;
+				display: grid;
+				grid-template-columns: 1fr 1.5fr;
+				gap: 2em;
+				align-items: start;
+			}
+			#contact .contact-info {
+				padding: 2em !important;
+			}
+			#contact .contact-form {
+				padding: 1em !important;
 			}
 		</style>
 		<script>
