@@ -112,21 +112,9 @@
 				margin-left: auto !important;
 				justify-content: flex-end !important;
 			}
-			/* Override Contact content container to not affect header alignment */
-			#contact .contact-content {
-				max-width: none !important;
-				margin: 0 !important;
-				padding: 0 !important;
-				display: grid;
-				grid-template-columns: 1fr 1.5fr;
-				gap: 2em;
-				align-items: start;
-			}
-			#contact .contact-info {
-				padding: 2em !important;
-			}
-			#contact .contact-form {
-				padding: 1em !important;
+			/* Try different approach - move header outside the content flow */
+			#contact header.major {
+				transform: translateX(-2em) !important;
 			}
 		</style>
 		<script>
