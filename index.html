@@ -112,16 +112,25 @@
 				margin-left: auto !important;
 				justify-content: flex-end !important;
 			}
-			/* Force Contact header alignment to match Resume header exactly */
+			/* Force Contact header alignment to match other headers exactly */
+			#contact {
+				position: relative;
+			}
 			#contact header.major {
-				margin-left: calc((100% - 1400px) / 2 - 8.5em) !important;
+				position: absolute;
+				left: 0 !important;
+				margin-left: 0 !important;
 				padding-left: 0 !important;
 				text-align: left !important;
+				width: auto !important;
 			}
 			#contact header.major h2 {
 				margin-left: 0 !important;
 				padding-left: 0 !important;
 				text-align: left !important;
+			}
+			#contact .contact-content {
+				margin-top: 4em;
 			}
 		</style>
 		<script>
