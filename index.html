@@ -52,16 +52,19 @@
 			.features article:hover h3 {
 				color: #f56a6a;
 			}
-			/* Project image sizing */
+			/* Project image sizing — square crop box, full image visible, capped size */
+			.posts article .image {
+				display: block;
+				width: min(100%, 240px);
+				aspect-ratio: 1 / 1;
+				margin: 0 auto 1.5em auto;
+				overflow: hidden;
+			}
 			.posts article .image img {
 				width: 100%;
-				height: 250px;
-				object-fit: cover;
-				object-position: center 70%;
-			}
-			/* NFL project image positioning - move up slightly (3rd project card) */
-			.posts article:nth-child(3) .image img {
-				object-position: center 60%;
+				height: 100%;
+				object-fit: contain;
+				object-position: center;
 			}
 			/* Resume button hover effects - red background with white text/border */
 			.resume-button:hover {
